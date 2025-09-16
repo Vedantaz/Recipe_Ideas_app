@@ -1,0 +1,113 @@
+.container.main {
+  width: 95%;         
+  max-width: 1200px;   
+  margin: 0 auto;     
+  padding: 0 1em;     
+}
+
+.outer-container {
+  width: 90%;
+  margin: 0 auto; 
+}
+
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em; 
+  padding: 1em;
+}
+.recipe-card {
+  background-color: var(--background-light);
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1em auto;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.recipe-section {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.recipe-desc {
+  border: 1px solid var(--primary-color);
+  padding: 1em;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+.ingredient-item {
+    display: inline-block;
+    background-color: #ff4d4f;
+    color: white;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+
+.recipe-ingredient {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  .ingredient-item:hover {
+    background-color: #e04344;
+    transform: translateY(-2px);
+  }
+  li {
+    list-style: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.recipe-info {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info-card {
+
+  padding: 0.5em;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  b {
+    color: var(--primary-color);
+  }
+}

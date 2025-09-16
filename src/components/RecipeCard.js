@@ -1,15 +1,40 @@
-import CustomImage from "./CustomImage"
+import CustomImage from "./CustomImage";
 
-export default function RecipeCard({recipe}){
-    return (
-        <div className="recipe-card">
-            <CustomImage imgSrc={recipe.image} pt="65%"/>
-            <div className="recipe-card-info">
-                <img className="auther-img" src={recipe.authorImg} alt=""/>
-                <p className="recipe-title">{recipe.title}</p>
-                <p className="recipe-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <a className="view-btn" href="#!">VIEW RECIPE</a>
-            </div>
+export default function RecipeCard({ recipe, handleFilter, setQuery, query }) {
+  return (
+    <div className="recipe-card">
+      <CustomImage imgSrc={recipe.image} pt="65%" />
+
+      <div className="recipe-section">
+        <p className="recipe-desc">{recipe.description}</p>
+
+        <div className="recipe-ingredient">
+          {recipe.ingredients.map((ingredient, index) => (
+            <span
+              key={index}
+              onClick={() => setQuery(ingredient)}
+              className={`ingredient-item ${
+                query === ingredient ? "active" : ""
+              }`}
+            >
+              {ingredient}
+              {index < recipe.ingredients.length - 1 ? " " : ""}
+            </span>
+          ))}
         </div>
-    )
+
+        <div className="recipe-info">
+          <div className="info-card recipe-cuisine">
+            Cuisine: <b>{recipe.cuisine}</b>
+          </div>
+          <div className="info-card recipe-difficulty">
+            Time: <b>{recipe.time}</b>
+          </div>
+          <div className="info-card recipe-time">
+            Difficulty: <b>{recipe.difficulty}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
