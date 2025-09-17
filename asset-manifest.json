@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "public/static/css/main.a3a0634f.chunk.css",
-    "main.js": "public/static/js/main.5e188bba.chunk.js",
-    "main.js.map": "public/static/js/main.5e188bba.chunk.js.map",
-    "runtime-main.js": "public/static/js/runtime-main.e3dd427d.js",
-    "runtime-main.js.map": "public/static/js/runtime-main.e3dd427d.js.map",
-    "static/js/2.e6e015dc.chunk.js": "public/static/js/2.e6e015dc.chunk.js",
-    "static/js/2.e6e015dc.chunk.js.map": "public/static/js/2.e6e015dc.chunk.js.map",
-    "index.html": "public/index.html",
-    "static/css/main.a3a0634f.chunk.css.map": "public/static/css/main.a3a0634f.chunk.css.map",
-    "static/js/2.e6e015dc.chunk.js.LICENSE.txt": "public/static/js/2.e6e015dc.chunk.js.LICENSE.txt"
+    "main.css": "https://vedantaz.github.io/Recipe_Ideas_app/static/css/main.a3a0634f.chunk.css",
+    "main.js": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/main.a5670100.chunk.js",
+    "main.js.map": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/main.a5670100.chunk.js.map",
+    "runtime-main.js": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/runtime-main.d694db13.js",
+    "runtime-main.js.map": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/runtime-main.d694db13.js.map",
+    "static/js/2.e6e015dc.chunk.js": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/2.e6e015dc.chunk.js",
+    "static/js/2.e6e015dc.chunk.js.map": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/2.e6e015dc.chunk.js.map",
+    "index.html": "https://vedantaz.github.io/Recipe_Ideas_app/index.html",
+    "static/css/main.a3a0634f.chunk.css.map": "https://vedantaz.github.io/Recipe_Ideas_app/static/css/main.a3a0634f.chunk.css.map",
+    "static/js/2.e6e015dc.chunk.js.LICENSE.txt": "https://vedantaz.github.io/Recipe_Ideas_app/static/js/2.e6e015dc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e3dd427d.js",
+    "static/js/runtime-main.d694db13.js",
     "static/js/2.e6e015dc.chunk.js",
     "static/css/main.a3a0634f.chunk.css",
-    "static/js/main.5e188bba.chunk.js"
+    "static/js/main.a5670100.chunk.js"
   ]
 }
