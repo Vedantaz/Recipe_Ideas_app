@@ -6,7 +6,6 @@ export default function RecipeCard({ recipe, setQuery, query }) {
   const [showFullMeasures, setShowFullMeasures] = useState(false);
   const [showIngredientsModal, setShowIngredientsModal] = useState(false);
 
-  // for description handling in read more
   const [showModal, setShowModal] = useState(false);
   const maxLength = 150;
   const descInstructions = recipe.strInstructions || "";
