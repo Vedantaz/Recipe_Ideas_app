@@ -4,25 +4,25 @@ export default function ChiefsSection() {
   const chiefs = [
     {
       name: "Juan Carlos",
-      img: `${process.env.PUBLIC_URL}//img/top-chiefs/img_1.jpg`,
+      img: `${process.env.PUBLIC_URL}/img/top-chiefs/img_1.jpg`,
       recipesCount: "10",
       cuisine: "Mexican",
     },
     {
       name: "John Doe",
-      img: `${process.env.PUBLIC_URL}//img/top-chiefs/img_2.jpg`,
+      img: `${process.env.PUBLIC_URL}/img/top-chiefs/img_2.jpg`,
       recipesCount: "05",
       cuisine: "Japanese",
     },
     {
       name: "Erich Maria",
-      img: `${process.env.PUBLIC_URL}//img/top-chiefs/img_3.jpg`,
+      img: `${process.env.PUBLIC_URL}/img/top-chiefs/img_3.jpg`,
       recipesCount: "13",
       cuisine: "Italian",
     },
     {
       name: "Chris Brown",
-      img: `${process.env.PUBLIC_URL}//img/top-chiefs/img_4.jpg`,
+      img: `${process.env.PUBLIC_URL}/img/top-chiefs/img_4.jpg`,
       recipesCount: "08",
       cuisine: "American",
     },
@@ -34,7 +34,7 @@ export default function ChiefsSection() {
     },
     {
       name: "Ben Affleck",
-      img: `${process.env.PUBLIC_URL}//img/top-chiefs/img_6.jpg`,
+      img: `${process.env.PUBLIC_URL}/img/top-chiefs/img_6.jpg`,
       recipesCount: "04",
       cuisine: "Indian",
     },
