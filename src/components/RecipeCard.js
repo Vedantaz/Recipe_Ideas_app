@@ -2,9 +2,19 @@ import CustomImage from "./CustomImage";
 import { useState } from "react";
 
 export default function RecipeCard({ recipe, setQuery, query }) {
-  const [showModal, setShowModal] = useState(false);
-  const [showInstructionsModal, setShowInstructionsModal] = useState(false);
+  const [showFullIngredients, setShowFullIngredients] = useState(false);
+  const [showFullMeasures, setShowFullMeasures] = useState(false);
   const [showIngredientsModal, setShowIngredientsModal] = useState(false);
+
+  // for description handling in read more
+  const [showModal, setShowModal] = useState(false);
+  const maxLength = 150;
+  const descInstructions = recipe.strInstructions || "";
+  const isLong = descInstructions.length > maxLength;
+  const shortText = isLong
+    ? descInstructions.slice(0, maxLength) + "..."
+    : descInstructions;
+
   const ingredients = Array.from({ length: 20 }, (_, i) => {
     const ingredient = recipe[`strIngredient${i + 1}`];
     const measure = recipe[`strMeasure${i + 1}`];
@@ -14,25 +24,21 @@ export default function RecipeCard({ recipe, setQuery, query }) {
     return null;
   }).filter(Boolean);
 
-  const maxLength = 150;
-  const descInstructions = recipe.strInstructions || "";
-  const isLong = descInstructions.length > maxLength;
-  const shortText = isLong
-    ? descInstructions.slice(0, maxLength) + "..."
-    : descInstructions;
+  const allInstructions = recipe.strInstructions
+    ? recipe.strInstructions
+        .split(/[.\n]/)
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : [];
 
-  const maxInstructionsLength = 150;
-  const measureInstructions = recipe.strInstructions || "";
-  const isLongInstructions = measureInstructions.length > maxInstructionsLength;
-  const shortInstructions = isLongInstructions
-    ? measureInstructions.slice(0, maxInstructionsLength) + "..."
-    : measureInstructions;
+  const maxIngredientsToShow = 4;
+  const maxMeasuresToShow = 3;
 
-  const maxIngredientsToShow = 5;
   const isLongIngredients = ingredients.length > maxIngredientsToShow;
-  const shortIngredients = isLongIngredients
-    ? ingredients.slice(0, maxIngredientsToShow)
-    : ingredients;
+  const isLongMeasures = allInstructions.length > maxMeasuresToShow;
+
+  const shortIngredients = ingredients.slice(0, maxIngredientsToShow);
+  const shortMeasures = allInstructions.slice(0, maxMeasuresToShow);
 
   return (
     <div className="recipe-card">
@@ -53,25 +59,27 @@ export default function RecipeCard({ recipe, setQuery, query }) {
         </p>
 
         <div className="recipe-ingredient">
-          {shortIngredients.map(({ ingredient, measure }, index) => (
-            <span
-              key={index}
-              onClick={() => setQuery(ingredient)}
-              className={`ingredient-item ${
-                query === ingredient ? "active" : ""
-              }`}
-              style={{ cursor: "pointer" }}
-            >
-              {ingredient} ({measure})
-            </span>
-          ))}
+          {(showFullIngredients ? ingredients : shortIngredients).map(
+            ({ ingredient, measure }, index) => (
+              <span
+                key={index}
+                onClick={() => setQuery(ingredient)}
+                className={`ingredient-item ${
+                  query === ingredient ? "active" : ""
+                }`}
+                style={{ cursor: "pointer" }}
+              >
+                {ingredient} ({measure})
+              </span>
+            )
+          )}
 
           {isLongIngredients && (
             <button
               className="read-more-btn"
-              onClick={() => setShowIngredientsModal(true)}
+              onClick={() => setShowFullIngredients((prev) => !prev)}
             >
-              Read More
+              {showFullIngredients ? "Read Less" : "Read More"}
             </button>
           )}
         </div>
@@ -86,12 +94,22 @@ export default function RecipeCard({ recipe, setQuery, query }) {
           <div className="info-card">
             <b className="title-measures">Measures used:</b>
             <ul className="measures-list">
-              {ingredients.map(({ ingredient, measure }, index) => (
-                <li key={index}>
-                  {ingredient}: {measure}
-                </li>
-              ))}
+              {(showFullMeasures ? allInstructions : shortMeasures).map(
+                (step, index) => (
+                  <li key={index} className="measure-item">
+                    {step}.
+                  </li>
+                )
+              )}
             </ul>
+            {isLongMeasures && (
+              <button
+                className="read-more-btn"
+                onClick={() => setShowFullMeasures((prev) => !prev)}
+              >
+                {showFullMeasures ? "Read Less" : "Read More"}
+              </button>
+            )}
           </div>
         </div>
       </div>
