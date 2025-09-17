@@ -2,7 +2,7 @@
   "name": "React-recipe-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vedantaz.github.io/Recipe_Ideas_app",
+  "homepage": "https://vedantaz.github.io",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
